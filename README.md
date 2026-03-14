@@ -10,7 +10,7 @@ clone the repo, build and run API
 - mvn clean install spring-boot:run
 - the applicaiton will be runnign at localhost:8080
 
-## 2. Databse access
+## 2. Database access
 
 Open PGAdmin at http://localhost:5050  
 Login with admin@admin.com / admin  
