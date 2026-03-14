@@ -1,7 +1,7 @@
 # incomapi
 Incom API - coding challenge
 
-## 1. Gettign started
+## 1. Getting started
 
 clone the repo, build and run API
 - git clone https://github.com/baijuachari2025/bussale-api.git
