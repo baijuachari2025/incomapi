@@ -38,6 +38,12 @@ docker volume rm  [image ID]
 
 Access Swagger UI at: http://localhost:8080/swagger-ui/index.html  
 
+## 5. Test Coverage
+
+
+- mvn test
+- The HTML report will be at target/site/jacoco/index.html.  
+
 
 
 
