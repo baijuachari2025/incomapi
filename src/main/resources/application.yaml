@@ -1,3 +1,9 @@
 spring:
   application:
     name: incomapi
+  datasource:
+    url: jdbc:postgresql://localhost:5432/baiju
+    username: myuser
+    password: secret
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
