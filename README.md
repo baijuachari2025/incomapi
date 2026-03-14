@@ -25,5 +25,10 @@ To remove:
 docker volume ls  
 docker volume rm  [image ID]
 
+## 2. Swagger
+
+Access Swagger UI at: http://localhost:8080/swagger-ui/index.html  
+
+
 
 
