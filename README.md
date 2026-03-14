@@ -15,4 +15,15 @@ Database: baiju
 Username: myuser  
 Password: secret
 
+## 2. Docker
+
+docker compose up  
+docker compose down -v
+
+To remove:
+
+docker volume ls  
+docker volume rm  [image ID]
+
+
 
