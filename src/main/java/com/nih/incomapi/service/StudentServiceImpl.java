@@ -32,6 +32,12 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     @Transactional(readOnly = true)
+    public List<StudentDto> searchByLastName(String lastName) {
+        return studentRepository.findByLastNameContainingIgnoreCase(lastName).stream().map(studentMapper::toDto).toList();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public StudentDto findById(Long id) {
         return studentMapper.toDto(getOrThrow(id));
     }

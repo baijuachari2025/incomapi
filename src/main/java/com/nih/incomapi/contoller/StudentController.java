@@ -20,6 +20,11 @@ public class StudentController {
         return studentService.findAll();
     }
 
+    @GetMapping("/search")
+    public List<StudentDto> searchByLastName(@RequestParam String lastName) {
+        return studentService.searchByLastName(lastName);
+    }
+
     @GetMapping("/{id}")
     public StudentDto findById(@PathVariable Long id) {
         return studentService.findById(id);

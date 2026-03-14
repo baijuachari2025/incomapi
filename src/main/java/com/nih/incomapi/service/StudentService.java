@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface StudentService {
     List<StudentDto> findAll();
+    List<StudentDto> searchByLastName(String lastName);
     StudentDto findById(Long id);
     StudentDto create(StudentDto dto);
     StudentDto update(Long id, StudentDto dto);
