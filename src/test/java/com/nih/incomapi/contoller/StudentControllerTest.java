@@ -58,7 +58,7 @@ class StudentControllerTest {
     void searchByLastName_returnsList() throws Exception {
         when(studentService.searchByLastName("Doe")).thenReturn(List.of(student));
 
-        mockMvc.perform(get("/api/students/search").param("lastName", "Doe"))
+        mockMvc.perform(get("/api/students/searchByLastName").param("lastName", "Doe"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].lastName").value("Doe"));
     }

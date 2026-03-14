@@ -1,6 +1,8 @@
 package com.nih.incomapi.contoller;
 
+import com.nih.incomapi.dto.PagedResponse;
 import com.nih.incomapi.dto.StudentDto;
+import com.nih.incomapi.dto.StudentSearchRequest;
 import com.nih.incomapi.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,9 +22,14 @@ public class StudentController {
         return studentService.findAll();
     }
 
-    @GetMapping("/search")
+    @GetMapping("/searchByLastName")
     public List<StudentDto> searchByLastName(@RequestParam String lastName) {
         return studentService.searchByLastName(lastName);
+    }
+
+    @PostMapping("/search")
+    public PagedResponse<StudentDto> search(@RequestBody StudentSearchRequest req) {
+        return studentService.search(req);
     }
 
     @GetMapping("/{id}")
