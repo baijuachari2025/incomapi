@@ -14,4 +14,5 @@ public interface StudentService {
     StudentDto create(StudentDto dto);
     StudentDto update(Long id, StudentDto dto);
     void delete(Long id);
+    StudentDto enrollCourse(Long studentId, Long courseId);
 }

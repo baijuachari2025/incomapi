@@ -85,6 +85,18 @@ public class StudentServiceImpl implements StudentService {
             .orElseThrow(() -> new EntityNotFoundException("Student not found: " + id));
     }
 
+    @Override
+    public StudentDto enrollCourse(Long studentId, Long courseId) {
+        Student student = getOrThrow(studentId);
+        Course course = courseRepository.findById(courseId)
+            .orElseThrow(() -> new EntityNotFoundException("Course not found: " + courseId));
+        if (student.getCourses().stream().anyMatch(c -> c.getCourseId().equals(courseId))) {
+            throw new IllegalStateException("Student " + studentId + " is already enrolled in course " + courseId);
+        }
+        student.getCourses().add(course);
+        return studentMapper.toDto(studentRepository.save(student));
+    }
+
     private Set<Course> resolveCourses(Set<Long> ids) {
         if (ids == null || ids.isEmpty()) return new HashSet<>();
         return new HashSet<>(courseRepository.findAllById(ids));
